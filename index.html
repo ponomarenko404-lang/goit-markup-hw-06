@@ -20,7 +20,7 @@
     <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <header class="page-header">
+    <header class="page-header hidden">
       <div class="container header-container">
         <nav class="header-nav">
           <a class="logo header-logo" href="./index.html"
@@ -57,9 +57,13 @@
         </button>
       </div>
 
-      <div class="mobile-menu is-open">
+      <div class="mobile-menu" data-menu>
         <div class="container mobile-menu-container">
-          <button class="mobile-menu-close" type="button">Cl</button>
+          <button class="mobile-menu-close" data-menu-close type="button">
+            <svg class="icon-close" width="8" height="8">
+              <use href="./images/icons.svg#icon-closeicon"></use>
+            </svg>
+          </button>
           <nav class="mobile-menu-nav">
             <ul class="mobile-menu-list">
               <li class="mobile-menu-item">
@@ -67,10 +71,10 @@
                   >Studio</a
                 >
               </li>
-              <li class="mobile-menu-nav-item">
+              <li class="mobile-menu-item">
                 <a class="menu-nav-link" href="">Portfolio</a>
               </li>
-              <li class="mobile-menu-nav-item">
+              <li class="mobile-menu-item">
                 <a class="menu-nav-link" href="">Contacts</a>
               </li>
             </ul>
@@ -78,7 +82,9 @@
           <address class="mobile-menu-contacts">
             <ul class="mobile-menu-contacts-list">
               <li class="mobile-menu-contacts-item">
-                <a class="mobile-menu-contacts-link" href="tel:+110001111111"
+                <a
+                  class="mobile-menu-contacts-link number-style"
+                  href="tel:+110001111111"
                   >+11 (000) 111-11-11</a
                 >
               </li>
@@ -93,31 +99,31 @@
           </address>
 
           <div class="container-link">
-            <ul class="social-footer-list">
-              <li class="social-footer-item">
-                <a class="social-footer-link" href="">
-                  <svg class="footer-sociallink" width="24" height="24">
+            <ul class="social-menu-list">
+              <li class="social-menu-item">
+                <a class="social-menu-link" href="">
+                  <svg class="menu-sociallink" width="24" height="24">
                     <use href="./images/icons.svg#icon-instagram"></use>
                   </svg>
                 </a>
               </li>
-              <li class="social-footer-item">
-                <a class="social-footer-link" href="">
-                  <svg class="footer-sociallink" width="24" height="24">
+              <li class="social-menu-item">
+                <a class="social-menu-link" href="">
+                  <svg class="menu-sociallink" width="24" height="24">
                     <use href="./images/icons.svg#icon-twitter"></use>
                   </svg>
                 </a>
               </li>
-              <li class="social-footer-item">
-                <a class="social-footer-link" href="">
-                  <svg class="footer-sociallink" width="24" height="24">
+              <li class="social-menu-item">
+                <a class="social-menu-link" href="">
+                  <svg class="menu-sociallink" width="24" height="24">
                     <use href="./images/icons.svg#icon-facebook"></use>
                   </svg>
                 </a>
               </li>
-              <li class="social-footer-item">
-                <a class="social-footer-link" href="">
-                  <svg class="footer-sociallink" width="24" height="24">
+              <li class="social-menu-item">
+                <a class="social-menu-link" href="">
+                  <svg class="menu-sociallink" width="24" height="24">
                     <use href="./images/icons.svg#icon-linkedin"></use>
                   </svg>
                 </a>
@@ -128,7 +134,7 @@
       </div>
     </header>
     <main>
-      <section class="section color hidden">
+      <section class="section color">
         <div class="container section-one">
           <h1 class="page-title">Effective Solutions for Your Business</h1>
           <button class="service-button" type="button" data-modal-open>
@@ -635,6 +641,7 @@
       </div>
     </div>
     <script src="./js/modal.js"></script>
+    <script src="./js/menu.js"></script>
     <!--region backdrop-->
   </body>
 </html>
