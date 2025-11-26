@@ -1063,14 +1063,14 @@ button {
   
 }
 
-/*------------------- start footer -------------------- */
+/*------------------- end footer -------------------- */
 
 
 /*============
 backdrop
 =============*/
-
-/* .backdrop {
+/* --------------------general */
+.backdrop {
   background-color: rgba(46, 47, 66, 0.4);
   position: fixed;
   top: 0;
@@ -1079,8 +1079,7 @@ backdrop
   height: 100%;
   z-index: 999;
   display: flex;
-  justify-content: center;
-  align-items: center;
+  
   opacity: 0;
   pointer-events: none;
   transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
@@ -1092,6 +1091,7 @@ backdrop
   visibility: visible;
   pointer-events: auto;
 }
+/* region modal */
 
 .modal {
   position: absolute;
@@ -1101,58 +1101,16 @@ backdrop
   display: flex;
   flex-direction: column;
   background-color: #fcfcfc;
-  min-width: 408px;
-  min-height: 584px;
-  margin: 0 auto;
-  padding: 72px 24px 24px 24px;
+  min-width: 288px;
+  min-height: 623px;
+
+  padding: 72px 16px 24px 16px;
   border-radius: 4px;
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
-    0 2px 1px 0 rgba(0, 0, 0, 0.2);
+      0 2px 1px 0 rgba(0, 0, 0, 0.2);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
 
-.input-container {
-  position: relative;
 }
-
-.backdrop:not(.is-open) .modal {
-  transform: translate(-50%, -50%) scale(1.5);
-}
-.close-btn {
-  display: block;
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 0;
-  width: 24px;
-  height: 24px;
-  background-color: #e7e9fc;
-  margin-bottom: 24px;
-  cursor: pointer;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.backdrop .close-btn:hover,
-.backdrop .close-btn:focus {
-  background-color: #404bbf;
-  border: none;
-}
-
-.icon-close {
-  fill: #2e2f42;
-  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.backdrop .close-btn:hover .icon-close,
-.backdrop .close-btn:focus .icon-close {
-  fill: #ffffff;
-}
-
 .modal-text {
   margin-bottom: 16px;
   font-weight: 500;
@@ -1163,12 +1121,6 @@ backdrop
   color: #2e2f42;
 }
 
-.modal-form {
-}
-
-.form-container {
-  margin-bottom: 8px;
-}
 .modal-user-info-label {
   color: #8e8f99;
   font-size: 12px;
@@ -1178,8 +1130,20 @@ backdrop
   margin-bottom: 4px;
 }
 
-.input-container {
-  position: relative;
+textarea::placeholder {
+  color: rgba(46, 47, 66, 0.4);
+}
+
+
+.modal-contact-input {
+  width: 100%;
+  padding-left: 34px;
+  height: 40px;
+  background-color: transparent;
+  border: 1px solid rgba(46, 47, 66, 0.4);
+  border-radius: 4px;
+  outline: transparent;
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .modal-icon {
@@ -1191,28 +1155,12 @@ backdrop
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-contact-input {
-  width: 100%;
-  height: 40px;
-  background-color: transparent;
-  border: 1px solid rgba(46, 47, 66, 0.4);
-  border-radius: 4px;
-  padding-left: 38px;
-  outline: transparent;
-  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.input-container {
+  position: relative;
 }
 
-.modal-contact-input:hover,
-.modal-contact-input:focus {
-  border-color: #4d5ae5;
-}
-
-.modal-contact-input:focus + .modal-icon {
-  fill: #4d5ae5;
-}
-
-textarea::placeholder {
-  color: rgba(46, 47, 66, 0.4);
+.form-container {
+  margin-bottom: 8px;
 }
 
 .comment-container {
@@ -1235,10 +1183,38 @@ textarea::placeholder {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.user-commetn:hover,
-.user-commetn:focus {
-  border-color: #4d5ae5;
+
+.close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 0;
+  cursor: pointer;
+
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: #e7e9fc;
+
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.icon-close {
+  fill: #2e2f42;
+  /* Чорний хрестик */
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+ .backdrop:not(.is-open) .modal {
+   transform: translate(-50%, -50%) scale(1.5);
+ }
 
 .checkbox {
   font-size: 12px;
@@ -1248,14 +1224,15 @@ textarea::placeholder {
   cursor: pointer;
 }
 
-.input-checkbox {
-}
-
 .custom-checkbox {
   border: 1px solid #404bbf;
 }
 
-.input-checkbox:checked + .checkbox > .custom-checkbox {
+.modal-contact-input:focus+.modal-icon {
+  fill: #4d5ae5;
+}
+
+.input-checkbox:checked+.checkbox>.custom-checkbox {
   background-color: #404bbf;
   border: none;
   fill: #f4f4fd;
@@ -1286,23 +1263,6 @@ textarea::placeholder {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.checkbox-link:hover,
-.checkbox-link:focus {
-  color: #404bbf;
-}
-.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  border: 0;
-  padding: 0;
-  white-space: nowrap;
-  clip-path: inset(100%);
-  clip: rect(0 0 0 0);
-  overflow: hidden;
-}
-
 .send-button {
   display: block;
   margin: 0 auto;
@@ -1322,9 +1282,45 @@ textarea::placeholder {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.send-button:hover,
-.send-button:focus {
+/* ==========Tablet========== */
+@media (min-width: 768px) {
+  .modal {
+    min-width: 408px;
+    min-height: 584px;
+    padding: 72px 24px 24px;
+  }
+
+}
+/*========== Desctop========== */
+@media (min-width: 1158px) {
+  .modal-contact-input {
+    padding-left: 38px;
+  }
+    .send-button:hover,
+    .send-button:focus {
+      background-color: #404bbf;
+    }
+ .checkbox-link:hover,
+ .checkbox-link:focus {
+   color: #404bbf;
+ }
+ .user-commetn:hover,
+ .user-commetn:focus {
+   border-color: #4d5ae5;
+ }
+ .modal-contact-input:hover,
+.modal-contact-input:focus {
+  border-color: #4d5ae5;
+}
+.backdrop .close-btn:hover,
+.backdrop .close-btn:focus {
   background-color: #404bbf;
-} */
+  border: none;
+}
+.backdrop .close-btn:hover .icon-close,
+.backdrop .close-btn:focus .icon-close {
+  fill: #ffffff;
+}
+}
 
 /*============new backdrop styles=============*/
