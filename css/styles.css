@@ -8,7 +8,7 @@ body {
   background-color: #fff;
 }
 
-/* general settings */
+/*-------------- general settings ----------- */
 
 ul,
 ol {
@@ -274,23 +274,34 @@ button {
 
 .mobile-menu-close {
   position: absolute;
-  top: 32px;
-  right: 32px;
-  border-radius: 50%;
-  display: block;
-  top: 24px;
-  right: 24px;
+  top: 16px;
+  right: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
-  padding: 0;
   width: 24px;
   height: 24px;
   background-color: transparent;
-  margin-bottom: 24px;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+.mobile-menu-close:hover,
+.mobile-menu-close:focus,
+.mobile-menu-close:active {
+  background-color: #404bbf;
+  border-color: #404bbf;
+}
+
+.mobile-menu-close:hover .icon-close,
+.mobile-menu-close:focus .icon-close,
+.mobile-menu-close:active .icon-close {
+  fill: #fff;
+ 
 }
 
 .icon-close {
@@ -302,36 +313,48 @@ button {
   margin-bottom: auto;
 }
 
-.menu-nav-link {
-  font-weight: 700;
-  font-size: 36px;
-  line-height: 1.1;
-  letter-spacing: 0.02em;
-  color: #2e2f42;
-}
-
 .mobile-menu-list {
   display: flex;
   flex-direction: column;
   gap: 40px;
 }
 
-.mobile-menu-contacts-link {
-  font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  line-height: 1.2;
+.menu-nav-link {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.1;
   letter-spacing: 0.02em;
-  color: #434455;
+  color: #2e2f42;
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.menu-nav-link:hover,
+.menu-nav-link:focus,
+.menu-nav-link:active {
+  color: #404bbf;
+}
 
 .mobile-menu-contacts-list {
   display: flex;
   flex-direction: column;
   gap: 24px;
   margin-bottom: 48px;
+}
+
+.mobile-menu-contacts-link {
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #434455;
+  font-style: normal;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.mobile-menu-contacts-link:hover,
+.mobile-menu-contacts-link:focus,
+.mobile-menu-contacts-link:active {
+  color: #404bbf;
 }
 
 .social-menu-list {
@@ -351,14 +374,21 @@ button {
   background-color: #4d5ae5;
   border-radius: 50%;
   margin: 0 auto;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.link-blue {
-  color: #404bbf;
+.social-menu-link:hover,
+.social-menu-link:focus,
+.social-menu-link:active {
+  background-color: #404bbf;
 }
 
 .menu-sociallink {
   fill: #f4f4fd;
+}
+
+.link-blue {
+  color: #404bbf;
 }
 
 @media (min-width: 768px) {
@@ -385,7 +415,7 @@ button {
 
 @media (min-resolution: 192dpi) {
   .color {
-    background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
       url('../images/phonehero@2x.jpg');
   }
 }
@@ -414,12 +444,17 @@ button {
   border: none;
   min-width: 169px;
   height: 56px;
-  box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
- 
 }
 
-/* ========== Tablet ========== */
+.service-button:hover,
+.service-button:focus {
+  background-color: #404bbf;
+}
+
+/* ================= Tablet ================= */
+
 @media (min-width: 768px) {
   .color {
     background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
@@ -430,12 +465,11 @@ button {
     max-width: 768px;
     padding-top: 112px;
     padding-bottom: 112px;
-    margin: 0 auto;
   }
 
   @media (min-resolution: 192dpi) {
     .color {
-      background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
         url('../images/tabhero@2x.jpg');
     }
   }
@@ -448,7 +482,7 @@ button {
   }
 }
 
-/* ========== Desktop ========== */
+/* ================= Desktop  ================= */
 
 @media (min-width: 1158px) {
   .color {
@@ -460,12 +494,11 @@ button {
     max-width: 1440px;
     padding-top: 188px;
     padding-bottom: 188px;
-    margin: 0 auto;
   }
 
   @media (min-resolution: 192dpi) {
     .color {
-      background: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+      background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
         url('../images/deschero@2x.jpg');
     }
   }
@@ -473,13 +506,7 @@ button {
   .page-title {
     margin: 0 auto 48px auto;
   }
-
-  .service-button:hover,
-  .service-button:focus {
-    background-color: #404bbf;
-  }
 }
-
 /*------------------- end section color -------------------- */
 
 /*------------------- start section  Advantages-------------------- */
@@ -517,6 +544,7 @@ button {
 }
 
 /* ========== Tablet ========== */
+
 @media (min-width: 768px) {
   .section-two-list {
     flex-direction: row;
@@ -534,6 +562,7 @@ button {
 }
 
 /* ========== Desktop ========== */
+
 @media (min-width: 1158px) {
   .section-advantages {
     padding: 120px 0;
@@ -598,12 +627,11 @@ button {
 .team-item {
   max-width: 264px;
   background-color: #fff;
-  box-shadow:
-  0px 1px 6px rgba(46, 47, 66, 0.08),
-  0px 1px 1px rgba(46, 47, 66, 0.16),
-  0px 2px 1px rgba(46, 47, 66, 0.08);
   border-radius: 0 0 4px 4px;
-  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16),
+    0px 2px 1px rgba(46, 47, 66, 0.08);
+  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .team-title {
@@ -642,10 +670,6 @@ button {
   gap: 24px;
 }
 
-.social-item {
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .social-link {
   display: flex;
   justify-content: center;
@@ -657,12 +681,17 @@ button {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.social-link:hover,
+.social-link:focus {
+  background-color: #404bbf;
+}
+
 .team-sociallink {
   fill: #f4f4fd;
 }
 
+/* ================= Tablet ================= */
 
-/* ========== Tablet ========== */
 @media (min-width: 768px) {
   .team-list {
     flex-direction: row;
@@ -676,8 +705,8 @@ button {
   }
 }
 
+/* ================= Desktop ================= */
 
-/* ========== Desktop ========== */
 @media (min-width: 1158px) {
   .team-color {
     padding: 120px 0;
@@ -685,63 +714,12 @@ button {
 
   .team-item {
     width: calc((100% - 72px) / 4);
-    box-shadow: none;
-  }
-
-  .team-item:hover,
-  .team-item:focus {
-    box-shadow:
-      0px 1px 6px rgba(46, 47, 66, 0.08),
-      0px 1px 1px rgba(46, 47, 66, 0.16),
-      0px 2px 1px rgba(46, 47, 66, 0.08);
-  }
-
-  .social-link:hover,
-  .social-link:focus {
-    background-color: #404bbf;
   }
 }
 
 /*------------------- end team-color section -------------------- */
 
-/*------------------- start portfolio-section section -------------------- */
-
-.portfolio-item {
-  box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
-    0 1px 1px 0 rgba(46, 47, 66, 0.16),
-    0 1px 6px 0 rgba(46, 47, 66, 0.08);
-}
-
-.overlay-color {
-  font-weight: 400;
-  font-size: 16px;
-  line-height: 1.5;
-  letter-spacing: 0.02em;
-  color: #f4f4fd;
-  background-color: #4d5ae5;
-  position: absolute;
-  overflow: auto;
-  transform: translateY(100%);
-  left: 0;
-  top: 0;
-  height: 100%;
-  width: 100%;
-  padding: 40px 32px;
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.portfolio-list {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  column-gap: 24px;
-  row-gap: 48px;
-}
-
-.tumb-img {
-  position: relative;
-  overflow: hidden;
-}
+/*------------------- start portfolio-section  -------------------- */
 
 .portfolio-container {
   display: flex;
@@ -784,47 +762,86 @@ button {
   border-top: none;
 }
 
-/* ========== Tablet ========== */
+.portfolio-list {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  column-gap: 24px;
+  row-gap: 48px;
+}
 
+.portfolio-item {
+  position: relative;
+  box-shadow:
+    0 2px 1px rgba(46, 47, 66, 0.08),
+    0 1px 1px rgba(46, 47, 66, 0.16),
+    0 1px 6px rgba(46, 47, 66, 0.08);
+  overflow: hidden;
+}
+
+.tumb-img {
+  position: relative;
+  overflow: hidden;
+}
+
+.overlay-color {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  color: #f4f4fd;
+  background-color: #4d5ae5;
+
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  padding: 40px 32px;
+
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.portfolio-item:hover .overlay-color,
+.portfolio-item:focus-within .overlay-color,
+.portfolio-item:active .overlay-color {
+  transform: translateY(0);
+}
+
+/* ================= Tablet ================= */
 @media (min-width: 768px) {
+  .portfolio-list {
+    justify-content: center;
+  }
+
   .portfolio-item {
     width: calc((100% - 24px) / 2);
   }
 }
 
-
-/* ========== Desktop  ========== */
+/* ================= Desktop ================= */
 
 @media (min-width: 1158px) {
-
   .portfolio-section {
     padding-top: 120px;
     padding-bottom: 120px;
   }
 
-  .portfolio-list {
-    justify-content: center;
-    row-gap: 48px;
-  }
-
   .portfolio-item {
     width: calc((100% - 48px) / 3);
-    box-shadow: none;
-    transition:
-      box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1),
-      transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .portfolio-item:hover,
   .portfolio-item:focus {
-    box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
-      0 1px 1px 0 rgba(46, 47, 66, 0.16),
-      0 1px 6px 0 rgba(46, 47, 66, 0.08);
-  }
-
- 
-  .overlay-color {
-    transform: translateY(100%);
+    transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow:
+      0 2px 1px rgba(46, 47, 66, 0.08),
+      0 4px 4px rgba(46, 47, 66, 0.16),
+      0 1px 6px rgba(46, 47, 66, 0.08);
   }
 
   .portfolio-item:hover .overlay-color {
@@ -832,7 +849,7 @@ button {
   }
 }
 
-/*------------------- end portfolio-section section -------------------- */
+/*------------------- end portfolio-section  -------------------- */
 
 /*------------------- start footer -------------------- */
 
@@ -912,8 +929,16 @@ button {
   height: 40px;
   background-color: #4d5ae5;
   border-radius: 50%;
+  transition: background-color 250ms, fill 250ms;
   fill: #f4f4fd;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.social-footer-link:hover,
+.social-footer-link:focus {
+  background-color: #31d0aa;
+  fill: #fff;
+  outline: none;
 }
 
 .subscribe-text {
@@ -956,6 +981,12 @@ button {
   margin-bottom: 16px;
 }
 
+
+.subscribe-input:hover,
+.subscribe-input:focus {
+  border-color: #31d0aa;
+}
+
 .subscribe-button {
   display: flex;
   justify-content: center;
@@ -971,16 +1002,24 @@ button {
   color: #fff;
   cursor: pointer;
   border: none;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   fill: #fff;
   margin-left: 16px;
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.subscribe-button:hover,
+.subscribe-button:focus {
+  background-color: #31d0aa;
+  
+  outline: none;
 }
 
 .subscribe-icon {
   margin-left: 16px;
 }
 
-/*========== Tablet ========== */
+/*------------------- tablet-------------------- */
+
 @media (min-width: 768px) {
   .footer-container {
     flex-direction: row;
@@ -1013,28 +1052,12 @@ button {
   .subscribe-input {
     width: 264px;
   }
-
-    .subscribe-input:focus {
-      border-color: #31d0aa;
-    }
-
-  .social-footer-link:hover,
-  .social-footer-link:focus {
-    background-color: #31d0aa;
-  }
-
-  .subscribe-button:hover,
-  .subscribe-button:focus {
-    background-color: #31d0aa;
-  }
-  
 }
 
 @media (min-width: 768px) and (max-width: 1157px) {
   .section-footer .container {
     max-width: 528px;
   }
-  
 }
 
 @media (min-width: 1158px) {
@@ -1060,16 +1083,13 @@ button {
     gap: 0;
     margin-right: 80px;
   }
-  
 }
 
 /*------------------- end footer -------------------- */
 
 
-/*============
-backdrop
-=============*/
-/* --------------------general */
+/*============ backdrop =============*/
+
 .backdrop {
   background-color: rgba(46, 47, 66, 0.4);
   position: fixed;
@@ -1079,11 +1099,11 @@ backdrop
   height: 100%;
   z-index: 999;
   display: flex;
-  
+  justify-content: center;
+  align-items: center;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1), visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .backdrop.is-open {
@@ -1091,9 +1111,11 @@ backdrop
   visibility: visible;
   pointer-events: auto;
 }
-/* region modal */
+
 
 .modal {
+  min-width: 288px;
+  min-height: 623px;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1101,16 +1123,13 @@ backdrop
   display: flex;
   flex-direction: column;
   background-color: #fcfcfc;
-  min-width: 288px;
-  min-height: 623px;
-
+  margin: 0 auto;
   padding: 72px 16px 24px 16px;
   border-radius: 4px;
-  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12),
-      0 2px 1px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.14), 0 1px 3px 0 rgba(0, 0, 0, 0.12), 0 2px 1px 0 rgba(0, 0, 0, 0.2);
   transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
+
 .modal-text {
   margin-bottom: 16px;
   font-weight: 500;
@@ -1134,7 +1153,6 @@ textarea::placeholder {
   color: rgba(46, 47, 66, 0.4);
 }
 
-
 .modal-contact-input {
   width: 100%;
   padding-left: 34px;
@@ -1146,6 +1164,11 @@ textarea::placeholder {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.modal-contact-input:hover,
+.modal-contact-input:focus {
+  border-color: #4d5ae5;
+}
+
 .modal-icon {
   position: absolute;
   left: 16px;
@@ -1153,6 +1176,10 @@ textarea::placeholder {
   transform: translateY(-50%);
   pointer-events: none;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.modal-contact-input:focus+.modal-icon {
+  fill: #4d5ae5;
 }
 
 .input-container {
@@ -1183,38 +1210,42 @@ textarea::placeholder {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.user-commetn:hover,
+.user-commetn:focus {
+  border-color: #4d5ae5;
+}
 
 .close-btn {
-  position: absolute;
-  top: 24px;
-  right: 24px;
-  width: 24px;
-  height: 24px;
-
   display: flex;
   justify-content: center;
   align-items: center;
-
-  padding: 0;
-  cursor: pointer;
-
+  position: absolute;
+  top: 24px;
+  right: 24px;
   border-radius: 50%;
   border: 1px solid rgba(0, 0, 0, 0.1);
+  width: 24px;
+  height: 24px;
   background-color: #e7e9fc;
+  cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
 
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+.close-btn:hover,
+.close-btn:focus {
+  background-color: #404bbf;
+  border: none;
 }
 
 .icon-close {
   fill: #2e2f42;
-  /* Чорний хрестик */
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
- .backdrop:not(.is-open) .modal {
-   transform: translate(-50%, -50%) scale(1.5);
- }
+.close-btn:hover .icon-close,
+.close-btn:focus .icon-close {
+  fill: #ffffff;
+}
 
 .checkbox {
   font-size: 12px;
@@ -1222,20 +1253,6 @@ textarea::placeholder {
   letter-spacing: 0.04em;
   color: #8e8f99;
   cursor: pointer;
-}
-
-.custom-checkbox {
-  border: 1px solid #404bbf;
-}
-
-.modal-contact-input:focus+.modal-icon {
-  fill: #4d5ae5;
-}
-
-.input-checkbox:checked+.checkbox>.custom-checkbox {
-  background-color: #404bbf;
-  border: none;
-  fill: #f4f4fd;
 }
 
 .custom-checkbox {
@@ -1254,6 +1271,12 @@ textarea::placeholder {
     fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.input-checkbox:checked+.checkbox>.custom-checkbox {
+  background-color: #404bbf;
+  border: none;
+  fill: #f4f4fd;
+}
+
 .checkbox-link {
   font-size: 12px;
   line-height: 1.33;
@@ -1263,10 +1286,14 @@ textarea::placeholder {
   transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
+.checkbox-link:hover,
+.checkbox-link:focus {
+  color: #404bbf;
+}
+
 .send-button {
   display: block;
-  margin: 0 auto;
-  margin-top: 24px;
+  margin: 24px auto 0 auto;
   border-radius: 4px;
   min-width: 169px;
   height: 56px;
@@ -1282,45 +1309,27 @@ textarea::placeholder {
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* ==========Tablet========== */
+.send-button:hover,
+.send-button:focus {
+  background-color: #404bbf;
+}
+
+/* ========== Tablet ========== */
+
 @media (min-width: 768px) {
   .modal {
     min-width: 408px;
     min-height: 584px;
     padding: 72px 24px 24px;
   }
-
 }
-/*========== Desctop========== */
+
+/*========== Desktop ========== */
+
 @media (min-width: 1158px) {
-  .modal-contact-input {
+.modal-contact-input {
     padding-left: 38px;
   }
-    .send-button:hover,
-    .send-button:focus {
-      background-color: #404bbf;
-    }
- .checkbox-link:hover,
- .checkbox-link:focus {
-   color: #404bbf;
- }
- .user-commetn:hover,
- .user-commetn:focus {
-   border-color: #4d5ae5;
- }
- .modal-contact-input:hover,
-.modal-contact-input:focus {
-  border-color: #4d5ae5;
-}
-.backdrop .close-btn:hover,
-.backdrop .close-btn:focus {
-  background-color: #404bbf;
-  border: none;
-}
-.backdrop .close-btn:hover .icon-close,
-.backdrop .close-btn:focus .icon-close {
-  fill: #ffffff;
-}
 }
 
-/*============new backdrop styles=============*/
+/*============end backdrop  =============*/
